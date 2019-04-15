@@ -30,10 +30,18 @@ class Login extends React.Component {
     console.log('hi',this.props);
     return (
       <div>
-        {this.props.history.push(`/first-screen`)}
+        {this.props.history.push(`/first/screen`)}
       </div>
     );
   }
+
+  static getDerivedStateFromProps(nextProps, prevState){
+    if(nextProps){
+      console.log('sdfv',nextProps);
+   }
+   else return null;
+  }
+
     render() {
         const { classes } = this.props;
         return (
@@ -68,9 +76,9 @@ class Login extends React.Component {
                         </Grid>
                     </Grid>
                     <Grid container justify="center" style={{ marginTop: '10px' }}>
-                      
-                        <Link  to="/first/screen" color="primary" style={{ textTransform: "none" }}>Login</Link>
+                    <Button  onClick={this.handleSubmit} color="primary" style={{ textTransform: "none" }}>Login</Button>
 
+                      
 
                     </Grid>
                 </div>

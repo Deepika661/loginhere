@@ -9,6 +9,12 @@ class FirstScreen extends React.Component {
 
     }
   }
+   static getDerivedStateFromProps(nextProps, prevState){
+     if(nextProps){
+       console.log('sdfv',nextProps);
+    }
+    else return null;
+  }
 render() {
 return (
 'FirstScreen')  }
